@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/black"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/locationText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:textColor="@color/white"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/locationValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bilzen, Tanjungbalai"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <EditText
+                android:id="@+id/searchBar"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/search_bg"
+                android:hint="Search coffee"
+                android:padding="12dp"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:id="@+id/filterButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_filter"
+                android:background="@color/brown"
+                android:layout_marginLeft="8dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Promo Banner -->
+    <RelativeLayout
+        android:id="@+id/promoBanner"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_below="@id/topBar"
+        android:padding="16dp">
+
+        <!-- Background Image -->
+        <ImageView
+            android:id="@+id/promoBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/coffee_banner"
+            android:background="@drawable/rounded_banner_bg"
+            android:elevation="4dp"/>
+
+        <!-- Promo Label -->
+
+        <!-- Promotional Text -->
+        <TextView
+            android:id="@+id/promoLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/rounded_promo_bg"
+            android:elevation="5dp"
+            android:padding="6dp"
+            android:text="Promo"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/promoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buy one get one FREE"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_below="@id/promoLabel"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="16dp"
+            android:elevation="5dp"/>
+
+        <!-- Coffee Icon (Optional) -->
+
+    </RelativeLayout>
+
+
+    <!-- Coffee Categories -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/coffeeCategories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/promoBanner"
+        app:tabMode="scrollable"
+        app:tabTextColor="@color/black"
+        app:tabSelectedTextColor="@color/brown">
+
+        <com.google.android.material.tabs.TabItem
+            android:text="All Coffee"/>
+        <com.google.android.material.tabs.TabItem
+            android:text="Macchiato"/>
+        <com.google.android.material.tabs.TabItem
+            android:text="Latte"/>
+    </com.google.android.material.tabs.TabLayout>
+
+    <!-- Coffee Grid -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/coffeeRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/coffeeCategories"
+        android:padding="16dp"
+        android:clipToPadding="false"
+        app:spanCount="2"/>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        app:itemIconTint="@color/brown"
+        app:itemTextColor="@color/brown"
+        app:menu="@menu/bottom_nav_menu"/>
+
+</RelativeLayout>
