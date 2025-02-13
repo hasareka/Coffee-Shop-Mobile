@@ -1,18 +1,23 @@
 package com.example.coffeeshop;
 
 public class CoffeeModel {
-    private String name, type, price;
-    private int image;
+    private String name;
+    private String description;
+    private String price;
+    private int imageResId;
+    private float rating;
 
-    public CoffeeModel(String name, String type, String price, int image, float v) {
+    public CoffeeModel(String name, String description, String price, int imageResId, float rating) {
         this.name = name;
-        this.type = type;
+        this.description = description;
         this.price = price;
-        this.image = image;
+        this.imageResId = imageResId;
+        this.rating = rating;
     }
 
     public String getName() { return name; }
-    public String getType() { return type; }
+    public String getDescription() { return description; }
     public String getPrice() { return price; }
-    public int getImage() { return image; }
+    public int getImageResId() { return imageResId; }
+    public float getRating() { return rating; }
 }

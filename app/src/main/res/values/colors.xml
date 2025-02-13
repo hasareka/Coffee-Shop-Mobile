@@ -5,5 +5,7 @@
     <color name="gray">#CCCCCC</color>
     <color name="dark_gray">#B64E4C4C</color>
     <color name="brown">#C67C4E</color>
+    <color name="gold">#FFD700</color>
+    <color name="light_gray">#94E9E8E1</color>
 
 </resources>
