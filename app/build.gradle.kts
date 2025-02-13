@@ -48,4 +48,6 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.16.0") // Optional for image loading
     annotationProcessor("com.github.bumptech.glide:compiler:4.16.0") // Required if using Glide
 
+
+
 }

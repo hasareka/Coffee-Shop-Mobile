@@ -4,7 +4,7 @@ public class CoffeeModel {
     private String name, type, price;
     private int image;
 
-    public CoffeeModel(String name, String type, String price, int image) {
+    public CoffeeModel(String name, String type, String price, int image, float v) {
         this.name = name;
         this.type = type;
         this.price = price;
